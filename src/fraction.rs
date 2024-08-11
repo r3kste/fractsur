@@ -130,10 +130,7 @@ macro_rules! impl_ops {
         $(
             impl From<$t> for Frac {
                 fn from(value: $t) -> Self {
-                    Frac {
-                        numerator: value as i128,
-                        denominator: 1,
-                    }
+                    Frac::new(value as i128, 1)
                 }
             }
 
